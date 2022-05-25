@@ -133,5 +133,6 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/images/'
+LOGIN_REDIRECT_URL = '/news/'
+
+LOGIN_URL = '/login/'

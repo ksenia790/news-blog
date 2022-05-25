@@ -4,8 +4,15 @@
   
 <div class="navbar fixed-top navbar-dark bg-dark">
   <div class="container">
-    <h4 style="color:rgb(255, 255, 255)">News App <h4 style="color: rgb(154, 255, 0);"><a href="/ ">Register Here</a></h4>
-    </h4>
+    <h4>News App </h4>
+    <div class='reglog'>
+      {% if user.is_authenticated %}
+        <h1>Hello, {{ user.username }}!</h1>
+      {% else %}
+        <h5><a  href="/ ">Sign Up</a></h5>
+        <h5><a  href="/login">Login</a></h5>
+      {% endif %}
+    </div>
   </div>
 </div>
 
