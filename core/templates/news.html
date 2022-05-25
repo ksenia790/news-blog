@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  
+<div class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <h4 style="color:rgb(255, 255, 255)">News App <h4 style="color: rgb(154, 255, 0);">NEWS</h4>
+    </h4>
+  </div>
+</div>
+
+<!-- Card for header -->
+<div class="jumbotron" style="text-align: center; margin-top:40px">
+  <h2>Latest News using<a href="https://newsapi.org" style="text-decoration: none" ;> news API</a></h2>
+</div>
+
+<!-- Main -->
+<div class="container">
+  {% for post in posts %}
+  <div class="card border-primary mb-3">
+    <img src="{{ post.image }}" alt="image">
+  </div>
+
+  <div class="card border-primary mb-3">
+    <h4><span class="badge badge-primary">Headline:</span></h4>
+    <h5>{{ post.title }}</h5>
+    <h4> <span class="badge badge-success">Content:</span></h4>
+    <h5>{{ post.content }}</h5>
+    <a href={{post.url}}><h5><strong>Full article you can read here.</strong></h5></a>
+    <small>
+      Published: {{ post.date }}
+    </small>
+    
+  </div>
+  {% endfor %}
+{% endblock content %}
