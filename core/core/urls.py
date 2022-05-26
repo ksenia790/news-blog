@@ -21,4 +21,5 @@ urlpatterns = [
     path('', include('news.urls', namespace='news')),
     path('', include('users.urls', namespace='users')),
     path('api/', include('news.newsapi.urls', namespace='newsapi')),
+    path('api/', include('users.usersapi.urls', namespace='userssapi')),
 ]

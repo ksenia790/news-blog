@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'rest_framework',
+    'rest_framework.authtoken',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,8 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'news',
-
+    
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        #'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        #'rest_framework.permissions.IsAdminUser',
+        'rest_framework.permissions.IsAuthenticated'
+   ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

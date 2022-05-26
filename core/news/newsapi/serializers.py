@@ -3,7 +3,7 @@ from rest_framework.serializers import ModelSerializer
 from news.models import Post
 
 
-class PostListSerializer(ModelSerializer):
+class NewsListSerializer(ModelSerializer):
     """
         Displays info(fields) about all posts. 
     """

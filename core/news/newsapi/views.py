@@ -1,10 +1,12 @@
-from rest_framework.generics import ListAPIView
-from rest_framework.pagination import LimitOffsetPagination
-from .serializers import PostListSerializer
+from rest_framework.generics import ListAPIView, CreateAPIView
+from .serializers import NewsListSerializer
 from news.models import Post
+from rest_framework.permissions import IsAuthenticated
+from users.usersapi.customauth import CustomAuthentication
 
 
-class PostListAPIView(ListAPIView):
+class NewsListAPIView(ListAPIView, CreateAPIView):
+    authentication_classes = [CustomAuthentication]
+    permission_classes = (IsAuthenticated,)
     queryset = Post.objects.all()
-    serializer_class = PostListSerializer
-    pagination_class = LimitOffsetPagination
+    serializer_class = NewsListSerializer

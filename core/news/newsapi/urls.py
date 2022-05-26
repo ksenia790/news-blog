@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import PostListAPIView
+from .views import NewsListAPIView
 
-app_name = 'post'
+app_name = 'news'
 
 urlpatterns = [
-    path('listnews/', PostListAPIView.as_view(), name="post_list"),
+    path('listnews/', NewsListAPIView.as_view(), name="post_list"),
 ]
