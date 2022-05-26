@@ -7,9 +7,10 @@
     <h4>News App </h4>
     <div class='reglog'>
       {% if user.is_authenticated %}
-        <h1>Hello, {{ user.username }}!</h1>
+        <h5>Hello, {{ user.username }}!</h5><br>
+        <a href="/logout/">Logout</a><br>
       {% else %}
-        <h5><a  href="/ ">Sign Up</a></h5>
+        <h5><a  href="/register ">Sign Up</a></h5>
         <h5><a  href="/login">Login</a></h5>
       {% endif %}
     </div>
@@ -40,4 +41,5 @@
     
   </div>
   {% endfor %}
+
 {% endblock content %}

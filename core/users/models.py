@@ -4,11 +4,11 @@ from .managers import CustomUserManager
 
 
 class User(AbstractUser):
-    username = models.CharField(max_length=45)
+    username = models.CharField(max_length=45, unique=True)
     email = models.EmailField(max_length=80, unique=True)
 
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ["username"]
+    USERNAME_FIELD = 'username'
+    #REQUIRED_FIELDS = ["username"]
 
     objects = CustomUserManager()
 
