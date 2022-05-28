@@ -147,3 +147,7 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/news/'
 
 LOGIN_URL = '/login/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DISABLE_COLLECTSTATIC=1
