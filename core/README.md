@@ -29,7 +29,9 @@ At first you need sign in - `http://0.0.0.0:8000/register` and after press `go t
 ## Avalible API methods for blog posts:
 
 GET - /api/listnews/ - Retrieve All News
+<br>
 GET, POST - /api/createuser/ - Retrieve All Users And Allow Register New One
+<br>
 GET - /api/auth/id/ - Allow To Get Token By Provide User's ID
 <br>
 	
