@@ -20,9 +20,7 @@ class GetToken(RetrieveAPIView):
 class UserCreateOrListView(mixins.ListModelMixin,
                            mixins.CreateModelMixin,
                            generics.GenericAPIView):
-    """
-    Creation and list user
-    """
+    
     serializer_class = serializers.UserSerializer
     permission_classes = [AllowAny]
 

@@ -24,6 +24,7 @@ def register(request):
         user_form = UserForm()
     return render(request,'register.html', {'user_form': user_form, 'registered': registered})
 
+
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -36,6 +37,7 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied.")
     else:
         return render(request, 'login.html', {})
+
 
 @login_required
 def user_logout(request):
