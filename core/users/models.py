@@ -14,6 +14,11 @@ class User(AbstractUser):
     USERNAME_FIELD = 'username'
     objects = CustomUserManager()
 
+    def get_my_token(self):
+        return Token.objects.get(user=user)
+    
+    my_token = property(get_my_token)
+
     def __str__(self):
         return self.username
 

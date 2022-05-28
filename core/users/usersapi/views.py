@@ -7,6 +7,14 @@ from rest_framework.authtoken import views as auth_views
 from rest_framework.authtoken.models import Token
 from rest_framework import status
 from . import serializers
+from rest_framework.generics import RetrieveAPIView
+
+
+class GetToken(RetrieveAPIView):
+    serializer_class = serializers.TokenSerializer
+    def get(request,  id):
+        token = Token.objects.get(user_id=id)
+        return Response(token.key)
 
 
 class UserCreateOrListView(mixins.ListModelMixin,

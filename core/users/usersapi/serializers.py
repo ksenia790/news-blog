@@ -1,6 +1,14 @@
+
 from django.contrib.auth import get_user_model
-from django.contrib.auth.password_validation import validate_password
 from rest_framework import serializers
+
+
+class TokenSerializer(serializers.ModelSerializer):
+    token = serializers.Field(source='my_token')
+
+    class Meta:
+        model = get_user_model()
+        fields = ('token',)
 
 
 class UserSerializer(serializers.ModelSerializer):
