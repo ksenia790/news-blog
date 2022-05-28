@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from newsapi import NewsApiClient
+from newsapi.newsapi_client import NewsApiClient
 from .models import Post
 from django.contrib.auth.decorators import login_required
 

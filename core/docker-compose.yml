@@ -1,7 +1,7 @@
 web:
   build: .
   environment:
-    MYENV: ENVIRON
+    MYENV: ENV
   volumes:
     - .:/code
 web_migrate:
