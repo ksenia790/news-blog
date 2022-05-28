@@ -19,6 +19,8 @@ Once you've cloned the project and have got your api-key, navigate to the root d
 The docker-compose command will build the images from dockerfile and docker-compose.yml file. This will create ports, links between containers, and configure applications as requrired. 
 
 2. ` docker-compose run web_run `
+<br>
+
 At first you need sign in - `http://0.0.0.0:8000/register` and after press `go to the home page` wich ll redicrect you to the `http://0.0.0.0:8000/news/`(this ll collect some data in database).
 *You can also delete all data from database by follow `http://0.0.0.0:8000/deletenews/`.
 
